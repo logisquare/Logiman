@@ -1,0 +1,118 @@
+@charset "utf-8";
+* {font-size:14px; color:#333333;}
+/*로그인 Start*/
+div.login_area {width:100%; height:100%; position: relative; overflow: hidden;}
+div.login_area div.login_body {float:left; width:55%; height:100%; position: relative;}
+div.login_area div.login_form {width:390px; /*height:507px;*/ position: absolute; left:50%; top:50%; margin-left:-195px; margin-top:-320px;}
+div.login_area div.login_form h1 {text-align: center; margin-bottom:34px; background: url("../images/logo.png") no-repeat center center; background-size: 383px 51px; height:51px; width:100%;}
+div.login_area div.login_form ul.login_input {width:100%; position: relative;}
+div.login_area div.login_form ul.login_input li {padding-bottom:18px;}
+div.login_area div.login_form ul.login_input li.input span {display: block; font-size:15px; color:#333333; padding-bottom:10px;}
+div.login_area div.login_form ul.login_input li input[type="text"],
+div.login_area div.login_form ul.login_input li input[type="password"] {border:1px solid #DADADA; width:390px; height:48px; border-radius: 5px; padding:0 10px;}
+div.login_area div.login_form ul.login_input li input[type="checkbox"] {display:none;}
+div.login_area div.login_form ul.login_input li input[type="checkbox"] + label {color:#888;}
+div.login_area div.login_form ul.login_input li input[type="checkbox"] + label > span {position: relative; display: inline-block; width:18px; height:18px; background:url("../images/icon/id_icon_off.png") no-repeat; vertical-align: middle; margin-right:5px;}
+div.login_area div.login_form ul.login_input li input[type="checkbox"]:checked + label > span {background:url("../images/icon/id_icon_on_01.png") no-repeat;}
+
+div.login_area div.login_form ul.login_input li button {width:390px; height:48px; font-size:16px; border-radius: 5px;}
+div.login_area div.login_form ul.login_input li label {font-size:15px;}
+div.login_area div.login_form ul.login_input li:nth-child(4) button,
+div.login_area div.login_form ul.login_input li:nth-child(4) input[type="submit"] {background:#3A466C; color:#fff;}
+div.login_area div.login_form ul.login_input li:nth-child(4) button:hover,
+div.login_area div.login_form ul.login_input li:nth-child(4) input[type="submit"]:hover {background:#5674C8;}
+div.login_area div.login_form ul.login_input li:nth-child(5) button,
+div.login_area div.login_form ul.login_input li:nth-child(5) input[type="submit"] {border:1px solid #3A466C; color:#3A466C; background:#fff;}
+div.login_area div.login_form ul.login_input li:nth-child(5) button:hover,
+div.login_area div.login_form ul.login_input li:nth-child(5) input[type="submit"]:hover {border:1px solid #5674C8; color:#5674C8;}
+.google_btn { width: auto !important; color: #3A466C; border : 1px solid #3A466C; height: 30px !important; border-radius: 5px; padding: 0 10px; font-size: 14px !important;}
+div.login_area div.login_form div.user_find {padding-top:20px; text-align: center;}
+div.login_area div.login_form div.user_find a {font-size:15px;}
+div.login_area div.login_form div.user_find a:hover {text-decoration: underline;}
+div.login_area div.login_form div.user_find span {padding:0 23px; font-size:15px;}
+div.login_area div.notice_body {background:#3A466C; width:45%; height:100%; float:right;  display: table; table-layout : fixed;} 
+/*공지사항 Start*/
+div.login_area div.notice_body h1 {font-family:Poppins,sans-serif; color:#fff; font-size:80px; font-weight:200; text-align: center; line-height: 1; display: table-cell; vertical-align: middle;}
+div.login_area div.notice_body h1 span {font-weight:100; font-size:50px; color:#fff;}
+div.login_area div.notice_body h1 strong  {font-weight:400; font-size:50px; color:#fff;}
+/*공지사항 End*/
+/*로그인 End*/
+
+/*헤더영역*/
+header {position: absolute; width:100%; z-index:3; top:0px; left:0px; box-shadow:5px 5px 5px 2px rgb(0 0 0 / 6%);}
+header div.info {width:100%; height:60px; line-height:60px; background:url("../images/white_logo.png") no-repeat 15px 15px #5674C8;}
+header div.info ul {float:right; overflow:hidden;}
+header div.info ul li {float:left; margin:0 15px;}
+header div.info ul li.cscenter span {color:#fff; width:180px; line-height:34px; border-radius: 50px; background:#6782CE; display: inline-block; text-align: center; font-size:16px;}
+header div.info ul li.server span {color:#fff; width:80px; line-height:34px; border-radius: 50px; background:#6782CE; display: inline-block; text-align: center; font-size:16px;}
+header div.info ul li a {vertical-align: middle;}
+header div.info ul li.wifi a {width:32px; height:25px; display: inline-block; background:url("../images/icon/wifi_icon_wh_01.png") no-repeat center center; background-size: 32px 25px;}
+/*header div.info ul li.help  { display: none;}*/
+header div.info ul li.help a {width:25px; height:25px; display: inline-block; background:url("../images/icon/help_wh_icon.png") no-repeat center center; background-size: 25px 25px;}
+header div.info ul li.info a {width:25px; height:25px; display: inline-block; background:url("../images/icon/info_icon_wh_02.png") no-repeat center center; background-size: 25px 25px;}
+header div.info ul li.logout a {width:25px; height:24px; display: inline-block; background:url("../images/icon/info_icon_wh_01.png") no-repeat center center; background-size: 25px 24px;}
+header div.info ul li.myinfo a {width:18px; height:25px; display: inline-block; background:url("../images/icon/info_icon_wh_03.png") no-repeat center center; background-size: 18px 25px;}
+header div.info ul li.sitemap a {width:23px; height:19px; display: inline-block; background:url("../images/icon/menu_icon_wh_01.png") no-repeat center center; background-size: 23px 19px;}
+header div.info ul li:last-child {background:#3A466C; width:60px; height:60px; text-align: center; margin-right:0px;}
+
+header div.page_navi {width:100%; height:40px; padding:0 40px; display: table; table-layout: fixed; background:#fff;}
+header div.page_navi div.page_items {display:table-cell; vertical-align: middle;}
+header div.page_navi a,
+header div.page_navi span {font-size:14px;}
+header div.page_navi span.arrow {margin:0 18px; background:url("../images/icon/nav_arrow_01.png") no-repeat; background-size:6px 12px; width:6px; height:12px; display: inline-block;}
+header div.page_navi a {font-size:12px; margin-right:18px; display: inline-block; padding:0 10px; line-height:22px; text-align: center; border-radius: 5px;}
+header div.page_navi a:hover, header div.page_navi a.on {color:#5674C8; background:#EEF1FA;}
+
+section {background:#F8FAFB;}
+div#menu {position: absolute; width:160px; min-height:100%; background:#3A466C; left:0px; top:0px; padding-top:110px; z-index: 2;}
+div#menu ul.main {position: inherit; width:100%; height:100%;}
+div#menu ul.main li.m {width:100%; line-height:40px; background-repeat: no-repeat; background-position: 16px center; border-left:6px solid #3A466C;}
+div#menu ul.main li.m span {cursor: pointer; padding-left:48px; color:#C8CFE2; font-size:14px;}
+div#menu ul.main li.m:hover, div#menu ul.main li.m.on {border-left:6px solid #5674C8; background-color:#2C3656;}
+div#menu ul.main li.m:hover span, div#menu ul.main li.m.on span {color:#fff; display: block;}
+div#menu ul.main li.m:nth-child(1) {background-image: url("../images/icon/menu_icon_v1_off_01.png");}
+div#menu ul.main li.m:nth-child(2) {background-image: url("../images/icon/menu_icon_v1_off_02.png");}
+div#menu ul.main li.m:nth-child(3) {background-image: url("../images/icon/menu_icon_v1_off_03.png");}
+div#menu ul.main li.m:nth-child(4) {background-image: url("../images/icon/menu_icon_v1_off_04.png");}
+div#menu ul.main li.m:nth-child(5) {background-image: url("../images/icon/menu_icon_v1_off_05.png");}
+div#menu ul.main li.m:nth-child(6) {background-image: url("../images/icon/menu_icon_v1_off_06.png");}
+div#menu ul.main li.m:nth-child(7) {background-image: url("../images/icon/menu_icon_v1_off_07.png");}
+div#menu ul.main li.m:nth-child(8) {background-image: url("../images/icon/menu_icon_v1_off_08.png");}
+div#menu ul.main li.m:nth-child(9) {background-image: url("../images/icon/menu_icon_v1_off_09.png");}
+div#menu ul.main li.m:nth-child(1):hover, div#menu ul.main li.m:nth-child(1).on {background-image: url("../images/icon/menu_icon_v1_on_01.png");}
+div#menu ul.main li.m:nth-child(2):hover, div#menu ul.main li.m:nth-child(2).on {background-image: url("../images/icon/menu_icon_v1_on_02.png");}
+div#menu ul.main li.m:nth-child(3):hover, div#menu ul.main li.m:nth-child(3).on {background-image: url("../images/icon/menu_icon_v1_on_03.png");}
+div#menu ul.main li.m:nth-child(4):hover, div#menu ul.main li.m:nth-child(4).on {background-image: url("../images/icon/menu_icon_v1_on_04.png");}
+div#menu ul.main li.m:nth-child(5):hover, div#menu ul.main li.m:nth-child(5).on {background-image: url("../images/icon/menu_icon_v1_on_05.png");}
+div#menu ul.main li.m:nth-child(6):hover, div#menu ul.main li.m:nth-child(6).on {background-image: url("../images/icon/menu_icon_v1_on_06.png");}
+div#menu ul.main li.m:nth-child(7):hover, div#menu ul.main li.m:nth-child(7).on {background-image: url("../images/icon/menu_icon_v1_on_07.png");}
+div#menu ul.main li.m:nth-child(8):hover, div#menu ul.main li.m:nth-child(8).on {background-image: url("../images/icon/menu_icon_v1_on_08.png");}
+div#menu ul.main li.m:nth-child(9):hover, div#menu ul.main li.m:nth-child(9).on {background-image: url("../images/icon/menu_icon_v1_on_09.png");}
+div#menu ul.main ul.sub_depth1 {position: absolute; width:0px; height:100%; background:#fff; top:-20px; left:-1000%; padding-top:20px;}
+div#menu ul.main ul.sub_depth1.open {box-shadow:5px 5px 5px 5px rgb(0 0 0 / 6%);}
+div#menu ul.main ul.sub_depth1.open li {display:block;}
+div#menu ul.main ul.sub_depth1 li {display:none;}
+div#menu ul.main ul.sub_depth1 li dl dt  {background:none; color:#332E2E; font-size:14px; background:url("../images/icon/submenu_arrow_down.png") no-repeat 90% center; padding-left:24px; cursor: pointer;}
+div#menu ul.main ul.sub_depth1 li dl dt.on {background:url("../images/icon/submenu_arrow_up.png") no-repeat 90% center;}
+div#menu ul.main ul.sub_depth1 li dl dd {display:none;}
+div#menu ul.main ul.sub_depth1 li dl dd ul li {line-height:38px;}
+div#menu ul.main ul.sub_depth1 li dl dd ul li a {color:#332E2E; padding-left:39px; display:block; font-size:12px;}
+div#menu ul.main ul.sub_depth1 li dl dd ul li:hover {background:#EEF1FA;}
+div#menu ul.main ul.sub_depth1 li dl dd ul li:hover a {color:#5674C8;}
+
+/*alert, confirm*/
+.swal2-title {background:#5674C8 !important; color:#fff !important;}
+.swal2-icon.swal2-question {border-color:#5674C8 !important;}
+.swal2-icon .swal2-icon-content {color:#5674C8;}
+.swal2-styled.swal2-confirm {border-color:none !important; background:#5674C8 !important;}
+.swal2-icon.swal2-error {border-color:#5674C8 !important; color:#5674C8 !important;}
+.swal2-icon.swal2-error [class^=swal2-x-mark-line] {background-color:#5674C8 !important;}
+.swal2-icon.swal2-info {border-color: #5674C8 !important; color: #5674C8 !important;}
+.swal2-icon.swal2-success .swal2-success-ring {border: 0.25em solid #5674C8 !important;}
+.swal2-icon.swal2-success [class^=swal2-success-line] {background-color: #5674C8 !important;}
+.swal2-icon.swal2-warning {border-color: #5674C8 !important; color: #5674C8 !important;}
+
+/*그리드 style*/
+.aui-grid-default-header {background:#F4F6F8; border-right:1px solid #E1E6EA !important; border-bottom:1px solid #E1E6EA !important;}
+.aui-grid-body-panel .aui-grid-table tr td {border-right:1px solid #E1E6EA !important; border-bottom:1px solid #E1E6EA !important;}
+.aui-grid-renderer-base span {color:#333;}

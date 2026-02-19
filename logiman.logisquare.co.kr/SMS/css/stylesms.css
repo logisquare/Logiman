@@ -1,0 +1,374 @@
+﻿@charset "utf-8";
+@import url(https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css);
+* { margin:0px; padding:0px; font-family: 'NanumSquare', sans-serif; box-sizing: border-box;}
+body, html {height:100%; position:relative;}
+img { border:0 none; vertical-align:top; }
+input {vertical-align:top;}
+input::placeholder {color:#AAAAAA}
+a:link, a:active { text-decoration:none; }
+a:visited { text-decoration:none; }
+a:hover { text-decoration:none; }
+a { text-decoration:none; }
+ul, ol, li, dl, dt, dd { list-style:none; }
+p { margin:0; padding:0;}
+fieldset, legend { margin:0; padding:0;}
+form { margin:0; padding:0; height:100%;}
+a.under_line {text-decoration:underline; color:#2222d3; font-size:13px;}
+input[type="button"] {cursor:pointer;}
+table {border-collapse: collapse;}
+textarea {resize:none;}
+input[type="checkbox"] {display:none;}
+input[type="checkbox"] + label {font-size:3.89vw; color:#555; font-weight:300;}
+input[type="checkbox"] + label span {display:inline-block; width:7.78vw; height:7.78vw; vertical-align:middle; background:url("/SMS/images/check_off.png") left top no-repeat; background-size: 100%; cursor:pointer;}
+input[type="checkbox"]:checked + label span {background:url("/SMS/images/check_on.png") left top no-repeat; background-size: 100%;}
+input[type=password] {font-family: "Malgun gothic", dotum, sans-serif;}
+/*************************************************************************************************************/
+div#wrap {position:relative; width:100%; height:100%;}
+div.opacity_bg {background:url("/SMS/images/opa.png") repeat; width:100%; min-height:100%; padding:5.56vw;}
+div.self_area {position:relative; background: #fff; border-radius: 10px; width:100%; padding:7.78vw; margin-top: 35vw;}
+div.self_area h3 {font-size:4.17vw; font-weight:500; line-height: 1.5; text-align:center;}
+div.self_area dl {margin-top:5.00vw; text-align: center;}
+div.self_area dl dt {font-size:2.78vw; margin-bottom:2.50vw;}
+div.self_area dl dd p {display:inline-block; width:61.67vw; line-height: 14.17vw; background:#EDEDED; border-radius: 100px;}
+div.self_area dl dd p input[type="password"] {width:20px; text-align: center; vertical-align: middle; border:none; background:none; border-bottom:1px solid #AAAAAA; font-family:"굴림";}
+div.self_area dl dd.button {margin-top:5.00vw;}
+div.self_area dl dd.button button {background:#2D8CE2; color:#fff; font-size:16px; font-weight: 700; width:35.00vw; height:11.11vw; border:none; border-radius: 10px;}
+div.self_area p {font-size:3.61vw; line-height: 1.5; text-align: center; margin-top:8.06vw;}
+div.self_area div.self_logo {margin-top:10.00vw; text-align: center;}
+div.self_area div.self_logo svg {width: 22.50vw; height: 19vw;}
+/*카고페이 인증*/
+div.auth_area {background:#EDEDED; width:100%; min-height:92vh; padding:7.22vw 3vw;}
+div.auth_area h1 {font-size:5.56vw; text-align: center; font-weight: 900;}
+div.auth_area div.auth_body {background:#fff; border-radius:5px; box-shadow: rgb(166 180 200 / 20%) 5px 5px 5px; margin-top:8.33vw; padding:3.89vw;}
+div.auth_area div.auth_body p {font-size:4.44vw; text-align:center; line-height:1.5; font-weight:600; border-bottom: 1px solid #E0E0E0; padding-bottom:4.72vw;}
+div.auth_area div.auth_body table {margin-top:5.00vw; width:100%;}
+div.auth_area div.auth_body table th {font-size:3.89vw; font-weight:300; height:10vw; text-align: left; padding-left:2.78vw; vertical-align: top;}
+div.auth_area div.auth_body table td {font-size:3.89vw; font-weight:900; height:10vw; text-align: right; padding-right:2.78vw; vertical-align: top;}
+div.auth_area div.auth_body table td p {font-size:3.89vw; text-align: right; font-weight:400; border-bottom:none; padding-bottom:5px;}
+div.auth_area div.auth_body table td a {font-size:4vw; font-weight:400;}
+div.auth_area div.auth_body table.auth_tb2 th,
+div.auth_area div.auth_body table.auth_tb2 td {vertical-align: middle;}
+div.auth_area div.auth_body table.auth_tb2 tr:first-child th,
+div.auth_area div.auth_body table.auth_tb2 tr:first-child td {padding:10px 0;}
+div.auth_btn1 {width:100%; height:16.67vw; position:relative; bottom:0px;}
+div.auth_btn1 ul {overflow:hidden; width:100%; height:100%; position: relative;}
+div.auth_btn1 ul li {float:left; height:100%;}
+div.auth_btn1 ul li button {width:100%; height:100%; border:none; font-weight:900;}
+div.auth_btn1 ul li:first-child {width:35%;}
+div.auth_btn1 ul li:first-child button {background:#999999; color:#fff; font-size: 6.67vw;}
+div.auth_btn1 ul li:last-child {width:65%;}
+div.auth_btn1 ul li:last-child button {background:#E0E0E0; color:#fff; font-size: 6.67vw;}
+div.auth_btn2 {width:100%; height:16.67vw; position:relative; bottom:0px;}
+div.auth_btn2 button.gray {width:100%; height:100%; border:none; font-weight:900; background:#999999; color:#fff; font-size: 6.67vw;}
+div.auth_btn2 button.blue {width:100%; height:100%; border:none; font-weight:900; background:#2D8CE2; color:#fff; font-size: 6.67vw;}
+div.auth_btn3 {text-align: center; width:100%; padding-top:5vw;}
+div.auth_btn3 button.gray {width:48%; height:10.0vw; border:none; font-weight:900; background:#999999; color:#fff; font-size: 4.4vw;}
+div.auth_btn3 button.blue {width:48%; height:10.0vw; border:none; font-weight:900; background:#2D8CE2; color:#fff; font-size: 4.4vw;}
+
+div.agree_area {position: fixed; z-index:9; top:0px; left:0px; width:100%; height:100%; display:none;}
+div.agree_body {background:#fff; border-radius:5px; box-shadow: rgb(166 180 200 / 20%) 5px 5px 5px; margin-top:8.33vw; padding:3.89vw; width:100%; height:68vh;}
+div.agree_body textarea {width:100%; height:100%; border:none; word-break: keep-all;}
+/*카고페이 안내*/
+div.card_info_area {width:100%; height:100%; background:url("/SMS/images/card05_bg.png") no-repeat center top; background-size: cover; padding:3.89vw 0;}
+div.card_info_area h1 img {width:48.89vw; height:6.39vw;}
+div.card_info_area a {position: absolute; top:3.89vw; right:3.89vw;}
+div.card_info_area a img {width:5.56vw;}
+div.card_info_area div.top {padding:8.33vw 4vw;}
+div.card_info_area div.top span {font-size:10.56vw; display:inline-block; padding:5px 0px; color:#fff; }
+div.card_info_area div.top h2 {font-size:10.56vw; padding-top:2.78vw; color:#fff; font-weight:500; line-height:1.3;}
+div.card_info_area div.top h2 {font-size:10.56vw; padding-top:2.78vw; color:#fff; font-weight:500; line-height:1.3;}
+div.card_info_area div.top h2 strong {color:#fff; font-size:10.56vw; font-weight:500;}
+div.card_info_area div.top h2 button {width:33vw; height:8.89vw;background:#fff; color:#167AD5; font-size:3.61vw; border:none; border-radius: 5px; font-weight:900; vertical-align: middle; margin-left:7.33vw; box-shadow: rgb(166 180 200 / 20%) 5px 5px 5px;}
+div.card_info_area div.bottom {padding-top:0px;}
+div.card_info_area div.bottom div.content p.sub_text1 {font-size:4.7vw; line-height:1.5; padding-bottom:10.00vw;}
+div.card_info_area div.bottom div.content p.sub_text2 {font-size:4.7vw; line-height:1.5; padding-top:10.00vw;}
+div.card_info_area div.bottom div.content p.sub_text2 span {display:inline-block; padding:0 15px;}
+div.card_info_area div.bottom div.content a.tel_no {position:relative; right:auto; top:auto;}
+div.card_info_area div.bottom div.content {text-align: center; padding:5.33vw 4vw;}
+div.card_info_area div.bottom div.content img {width:82.22vw;}
+div.card_info_area div.button {text-align: center; width:100%;}
+div.card_info_area div.button button {border: none; width:100%; height:16.7vw; background: #999999; font-size:5.56vw; color:#fff;}
+div.auth_pop {background:url("/SMS/images/opa.png") repeat; width:100%; min-height:100%; padding:5.56vw; top:0px; left:0px; position: fixed; display:none;}
+div.auth_pop_body {position: relative; width:100%; padding:9.17vw 5.00vw; background:#fff; border-radius: 50px;}
+div.auth_pop_body h3 {text-align: center; font-size:3.61vw; line-height:1.5; font-weight:600;}
+div.auth_pop_body table {width:100%; margin-top:11.11vw;}
+div.auth_pop_body table th {height:50px;}
+div.auth_pop_body table th input {font-size:3.89vw; border:none; border-bottom:1px solid #999999; height:30px; text-align: center;}
+div.auth_pop_body table td button {border:none; background:#C8E5FF; padding:5px 10px; font-size:3.89vw; border-radius: 100px; color:#264765;}
+div.auth_pop_body table td button.gray {background:#E0E0E0; color:#fff;}
+div.auth_pop_body p {font-size:3.61vw; font-weight:700; text-align: center; line-height:1.5;  padding-top:8.33vw;}
+div.auth_pop_body p span {font-size:3.61vw; color:#2D8CE2; font-weight:bold;}
+div.auth_pop_body p.fail {color:#DC5050;}
+div.auth_pop_body div.auth_pop_btn {padding-top:8.33vw; text-align: center;}
+div.auth_pop_body div.auth_pop_btn button {width:32.78vw; height:10.00vw; border:none; background:#999999; color:#fff;}
+div.auth_pop_body div.auth_pop_btn button.gray {background: #E0E0E0;}
+div.auth_pop_body div.auth_pop_btn button.blue {background: #2D8CE2;}
+/*카드결제 정산중*/
+div.card_bill_area {width:100%; height:100%; background: url("/SMS/images/bill_bg.png") no-repeat top center; background-size: 100% 96.67vw;;}
+div.card_bill_area div.top {padding:3.89vw;}
+div.card_bill_area div.top h1 img {width:48.89vw; height:6.39vw;}
+div.card_bill_area div.top ul {overflow:hidden; width:100%; padding-top:9.72vw;}
+div.card_bill_area div.top ul li {width:50%; float:left; color:#fff; font-size:4vw;}
+div.card_bill_area div.top ul li:last-child {text-align: right;}
+div.card_bill_area div.top ul li button {width:28.61vw; height:6.39vw; background:#fff; border-radius: 100px; color:#2D8CE2; font-size:3.06vw; box-shadow: rgb(166 180 200 / 20%) 5px 5px 5px; border:none;}
+div.card_bill_area div.top h2 {color:#fff; font-size:8.33vw; font-weight:500; padding-top:10px; line-height:1.5; letter-spacing: 2px;}
+div.card_bill_area div.top div.date_view {margin-top:6vw; background:#fff; padding:5.56vw 4.44vw; border-radius: 30px; box-shadow: rgb(166 180 200 / 20%) 0px 1px 5px 5px;}
+div.card_bill_area div.top div.date_view table {width:100%; position: relative;}
+div.card_bill_area div.top div.date_view table th {text-align: left;}
+div.card_bill_area div.top div.date_view table th.com_name { color:#202020; font-size:5.28vw; padding-bottom:10px;}
+div.card_bill_area div.top div.date_view table th.amount {border-bottom:1px solid #707070;}
+div.card_bill_area div.top div.date_view table th.amount dl dt { color:#707070; font-size:2.78vw; font-weight:300;}
+div.card_bill_area div.top div.date_view table th.amount dl dd { color:#2D8CE2; font-size:6.94vw; font-weight:900; line-height:1.5;}
+div.card_bill_area div.top div.date_view table th.bank dl dt { color:#707070; font-size:3.33vw; padding-top:10px;}
+div.card_bill_area div.top div.date_view table th.bank dl dd { color:#707070; font-size:3.33vw; font-weight:300; line-height:2;}
+
+div.card_bill_area div.top div.date_view table td {text-align: right;}
+div.card_bill_area div.top div.date_view table td img.step1 {width:22.50vw; height:38.89vw;}
+div.card_bill_area div.top div.date_view table td img.step2 {width:27.50vw; height:38.89vw;}
+div.card_bill_area div.top div.date_view table td img.step3 {width:21.11vw; height:38.89vw;}
+div.card_bill_area div.middle {margin-top:10.00vw; background:#EDEDED; padding:23px 0; text-align: center;}
+div.card_bill_area div.middle div.middle_tel {text-align: right; margin-top:40px; padding-right:20px;}
+div.card_bill_area div.middle div.middle_tel a {font-size:3.61vw;}
+div.card_bill_area div.middle div.middle_tel a img {width:5.56vw;}
+div.card_bill_area div.middle dl dt {font-size:5.28vw; font-weight:700;}
+div.card_bill_area div.middle dl dd {font-size:4.72vw; padding-top:15px; line-height:1.5;}
+div.card_bill_area div.middle dl dd.middle_text {text-align: center;}
+div.card_bill_area div.middle dl dd.middle_text img {width:10.00vw;}
+div.card_bill_area div.middle dl {margin-bottom:20px;}
+div.card_bill_area div.middle button {width:71.11vw; height:10.56vw; border:none; background:none; border-radius: 100px; color:#fff; font-size:4.72vw; font-weight:900;}
+div.card_bill_area div.middle button.gray {background:#999999;} 
+div.card_bill_area div.middle button.blue {background:#2D8CE2;} 
+div.card_bill_area div.middle_logo {text-align: center; margin-top:20px;}
+div.card_bill_area div.middle_logo img {width:22.50vw; height:5.28vw;}
+
+div.bottom {background:#fff; position: relative; width:100%; padding-top:11.11vw; padding-bottom: 22.11vw;}
+div.bottom dl dt {width:100%; line-height:13.89vw; padding:0 11.11vw; font-size:5.00vw; background:url("/SMS/images/arr_down_icon.png") no-repeat 85vw 5vw; background-size:5.56vw 3.33vw;}
+div.bottom dl dt.up {background:url("/SMS/images/arr_up_icon.png") no-repeat 85vw 5vw; background-size:5.56vw 3.33vw;}
+div.bottom dl dd {background:#EDEDED; padding:3.61vw; display:none;}
+div.bottom dl dd table {width:100%;}
+div.bottom dl dd table th {text-align: left; font-size:4.44vw; font-weight:300; height:40px;}
+div.bottom dl dd table td {text-align: right; font-size:4.44vw; height:40px;}
+
+div.btn_type1 {width:100%; position:fixed; padding-top:9.17vw; bottom:0px; left:0px;}
+div.btn_type1 button {width:100%; height:13.89vw; border:none; color:#fff; font-size:6.67vw;}
+div.btn_type1 button.gray {background:#999999;}
+div.btn_type1 button.blue {background:#2D8CE2;}
+
+div.btn_type2 {width:100%; position:fixed; bottom:0; left:0; padding-top:9.17vw;}
+div.btn_type2 button {width:100%; height:13.89vw; border:none; color:#fff; font-size:6.67vw;}
+div.btn_type2 button.gray {background:#999999;}
+div.btn_type2 button.blue {background:#2D8CE2;}
+div.btn_type2 ul {overflow:hidden;}
+div.btn_type2 ul li {float:left;}
+div.btn_type2 ul li:first-child {width:70%;}
+div.btn_type2 ul li:last-child {width:30%;}
+
+/*빠른입금 서비스 안내 팝업*/
+div.service_area {position:relative; width:100%;}
+div.service_area div.top {position:relative; width:100%; padding:10px;}
+div.service_area div.top h1.logo img {width:47.22vw; height:6.39vw;}
+div.service_area div.top dl {padding:11.11vw 0;}
+div.service_area div.top dl dt {font-size:6.67vw; font-weight:500; line-height:1.5; margin-bottom:15px;}
+div.service_area div.top dl dd {font-size:3.89vw; line-height:1.5;}
+div.service_area div.top button {position:absolute; background:#2D8CE2; color:#fff; font-weight:900; width:33.06vw; height:19.44vw; border:none; border-radius: 10px; font-size:5.00vw; line-height:1.5; right:2.78vw; bottom:-13.89vw;}
+div.service_area div.middle {background:#E0E0E030; padding:2.78vw 0 11vw 0;}
+div.service_area div.middle dl {position: relative; width:100%; padding-top:4vw;}
+div.service_area div.middle dl dt {color:#fff; font-weight:900; font-size:4.44vw; padding:1.39vw 2.78vw; background:#2D8CE2; display: inline-block;}
+div.service_area div.middle dl dd {margin:2.78vw; border-bottom:1px solid #aaaaaa; font-size:3.89vw; word-break: keep-all; line-height: 2; padding-bottom:4vw;}
+div.service_area div.middle dl dd strong {display:block; font-size:4.44vw;}
+div.service_area div.middle dl:last-child dd {border-bottom:0px;}
+
+div.fast_area {position:relative; background:#E0E0E030; width:100%; padding:10px; min-height:100%;}
+div.fast_area h1.logo img {width:47.22vw; height:6.39vw;}
+div.fast_area div.top {position:relative; width:100%; padding:0 4vw;}
+div.fast_area div.top dl {padding:3vw 0;}
+div.fast_area div.top dl dt {font-size:6.67vw; font-weight:500; line-height:1.2; margin-bottom:15px;}
+div.fast_area div.top dl dd {font-size:3.89vw; line-height:1.5;}
+div.fast_area div.middle {width:82.22vw; height:100.00vw; margin:0 auto 25vw; background:#fff; box-shadow: rgb(166 180 200 / 20%) 0px 4px 5px 5px; margin-top:10px; padding:2.38vw;} 
+div.fast_area div.middle table {width:100%;}
+div.fast_area div.middle table thead th {font-size:5.67vw; padding:2.38vw; border-bottom:1px solid #E0E0E0; font-weight: 400;}
+div.fast_area div.middle table thead td {font-size:5.67vw; font-weight:600; color:#2D8CE2; padding:2.38vw; border-bottom:1px solid #E0E0E0;}
+div.fast_area div.middle table tbody th {text-align: left; font-weight: 400; padding:2.56vw;}
+div.fast_area div.middle table tbody td {text-align: right; font-weight: 700; padding:2.56vw;}
+div.fast_area div.middle table tbody tr:first-child th {padding-top:7vw;}
+div.fast_area div.middle table tbody tr:first-child td {padding-top:7vw;}
+div.fast_area div.middle p {text-align: left; padding:4.67vw 0vw 0 5vw; line-height:1.5; font-size:4.17vw;}
+div.fast_area div.middle p span {font-size:4.17vw;}
+div.fast_area div.middle p span.blue {color:#2D8CE2;}
+
+div.fast_success_area {position:relative; background:#E0E0E030; width:100%; padding:10px; min-height:100%;}
+div.fast_success_area h1.logo img {width:47.22vw; height:6.39vw;}
+div.fast_success_area div.top {position:relative; width:100%; padding:5vw 4vw 0;}
+div.fast_success_area div.top dl {padding:3vw 0;}
+div.fast_success_area div.top dl dt {font-size:6.67vw; font-weight:500; line-height:1.2; margin-bottom:15px; text-align: center;}
+div.fast_success_area div.top dl dt img {width:17.22vw;}
+div.fast_success_area div.top dl dd {font-size:3.89vw; line-height:1.5; text-align: center;}
+div.fast_success_area div.middle {width:82.22vw; margin:0 auto; background:#fff; box-shadow: rgb(166 180 200 / 20%) 0px 4px 5px 5px; margin-top:10px; padding:2.38vw;} 
+div.fast_success_area div.middle table {width:100%;}
+div.fast_success_area div.middle table thead th {font-size:5.28vw; padding:2.38vw; border-bottom:1px solid #E0E0E0; font-weight: 400; text-align: left; }
+div.fast_success_area div.middle table thead td {font-size:5.67vw; font-weight:600; color:#2D8CE2; padding:2.38vw; border-bottom:1px solid #E0E0E0; text-align: right;}
+div.fast_success_area div.middle table tbody th {text-align: left; font-weight: 400; padding:2.56vw;}
+div.fast_success_area div.middle table tbody td {text-align: right; font-weight: 700; padding:2.56vw;}
+div.fast_success_area div.middle table tbody tr:first-child th {padding-top:7vw;}
+div.fast_success_area div.middle table tbody tr:first-child td {padding-top:7vw;}
+div.fast_success_area div.bottom {width:95vw; margin:0 auto; text-align: center; background: #ffffff00;}
+div.fast_success_area div.bottom h1 {}
+div.fast_success_area div.bottom h1 span.icon_left {background-image:url("../images/membership_icon_left.png"); background-size: contain; background-repeat: no-repeat; width:35px; height:35px; display:inline-block; margin-bottom: -7px;}
+div.fast_success_area div.bottom h1 span.icon_right {background-image:url("../images/membership_icon_right.png"); background-size: contain; background-repeat: no-repeat; width:35px; height:35px; display:inline-block; margin-bottom: -7px;}
+div.fast_success_area div.bottom p {margin-top:10px; font-size:1.2em;}
+
+/*계좌번호 입력*/
+div.acct_layer {background:url("../images/opa.png") repeat; width:100%; height: 100%; position: fixed; top: 0px; left:0px; padding:5.56vw; display: none;}
+div.acct_layer div.acct_body {background:#fff; border-radius:20px; padding:5.56vw;}
+div.acct_layer div.acct_body h2 {font-size:5vw; font-weight:900; text-align: center;}
+div.acct_layer div.acct_body p {font-size:3.89vw; padding-top:10px; text-align: center;}
+div.acct_layer div.acct_body table {width:100%;}
+div.acct_layer div.acct_body thead th {font-size:4.8vw; font-weight:300; color:#202020; text-align: left; height:12vw; padding-top:5.56vw;}
+div.acct_layer div.acct_body tbody td {height:12vw; text-align: center; border-bottom:1px solid #AFB8C1}
+div.acct_layer div.acct_body tbody td select {border:none; width:100%; height:11vw; text-align: center; font-size:4vw;}
+div.acct_layer div.acct_body tbody td input {border:none; width:100%; height:11vw; text-align: center; font-size:4vw;}
+div.acct_layer div.acct_body tbody td input::placeholder {font-size:4vw;}
+
+/* 로딩바 */
+#divLoadingImage {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    top: 0px;
+    display: none;
+}
+
+#divLoadingImage > div {
+    position: absolute;
+    display: block;
+    background: rgba(255, 255, 255, 0.0);
+    z-index: 100000;
+    width: 500px;
+    height: 500px;
+    top: 50%;
+    top: 50%;
+    z-index: 9995;
+    margin-top: -250px;
+    left: 50%;
+    margin-left: -250px;
+    text-align: center;
+}
+
+#divLoadingImage > div img {
+    margin-top: 200px;
+    width: 100px;
+    height: 100px;
+}
+
+
+div.event_popup {position:fixed; display:none; top:0px; left:0px; width:100%; padding:4em 1em 0; overflow-y: auto; height: 100vh; background:url("/SMS/images/opa.png") repeat;}
+div.event_popup img {width:100%; max-width:1080px;}
+div.event_popup table {	border-collapse: collapse;	border-spacing: 0;}
+
+/*추가 CSS 20211125*/
+div.card_option_layer {background:url("../images/opa.png") repeat; width:100%; height:100%; position:fixed; left:0px; top:0px;}
+div.card_option_layer div.option_box {width:80.0vw; height:107.2vw; background:#fff; margin:17.2vw auto 0; border-radius:30px; padding:5vw;}
+div.card_option_layer h1 {font-size:3.6vw; font-weight:600; line-height:1.5; text-align:center; color:#202020; padding-top:7vw;}
+div.card_option_layer table {margin-top:7vw; width:100%;}
+div.card_option_layer table th {height:30px; padding-right:10px; padding-top:20px;}
+div.card_option_layer table td {height:30px; padding-top:20px;}
+div.card_option_layer table input.op_input {border:none; border-bottom:1px solid #AFB8C1; height:30px; width:100%; font-size:4vw; outline:none;}
+div.card_option_layer table button {border-radius:50px; width:100%; height:30px; border:none; font-size:4vw; background:#E0E0E0;}
+div.card_option_layer table button.on {background:#C8E5FF;}
+div.card_option_layer p {padding-top:13vw; font-size:3.6vw; text-align:center; line-height:1.5;}
+div.card_option_layer p span {color:#2D8CE2; font-size:3.6vw;}
+div.card_option_layer p.fail {color:#DC5050}
+div.card_option_layer ul.op_btn {overflow:hidden; position:relative; padding-top:8.3vw;}
+div.card_option_layer ul.op_btn li {width:118px;}
+div.card_option_layer ul.op_btn li button {width:118px;height:36px; background:#999999; border:none; color:#fff; font-size:4.4vw;}
+div.card_option_layer ul.op_btn li:first-child {float:left;}
+div.card_option_layer ul.op_btn li:last-child {float:right;}
+div.card_option_layer ul.op_btn li:last-child button {background:#2D8CE2;}
+div.fast_area div.middle_success {width:82.22vw; height:127.2vw; margin:14vw auto 25vw; background:#fff; box-shadow: rgb(166 180 200 / 20%) 0px 4px 5px 5px; padding:2.38vw;} 
+div.fast_area div.middle_success dl {width:100%; text-align:center; padding-top:25vw;}
+div.fast_area div.middle_success dl dd {font-size:24px; font-weight:500; padding-top:7.2vw; line-height:1.5;}
+div.fast_area div.middle_success p {text-align: left; padding:4.67vw 0vw 0 5vw; line-height:1.5; font-size:4.17vw;}
+div.fast_area div.middle_success p span {font-size:4.17vw;}
+div.fast_area div.middle_success p span.blue {color:#2D8CE2;}
+
+
+/*20211210 추가*/
+div.card_bill_area div.middle ul.info_ul {position:relative; width:100%; overflow:hidden; padding:0 25px 10px;}
+div.card_bill_area div.middle ul.info_ul li:first-child {float:left;}
+div.card_bill_area div.middle ul.info_ul li:last-child {float:right;}
+div.card_bill_area div.middle ul.info_ul li a img {width:6.7vw;}
+div.card_bill_area div.middle ul.info_ul li span.title {background:#2D8CE2; color:#fff; width:16.1vw; line-height:6.7vw; display:inline-block; border-radius:50px; font-weight:700;}
+div.card_bill_area div.middle ul.info_ul li span.result {font-size:3.3vw; font-weight:700;}
+div.snackbar {position:fixed; top:0px; left:0px; width:100%; padding:6.2vw 7vw; background:#323232; z-index:1; display:none;}
+div.snackbar p {color:#fff; font-size:4vw; font-weight:700; line-height:1.5;}
+div.snackbar button {background:none; border:none; color:#C8E5FF; position:absolute; right:6.2vw; top:9.2vw; font-size:4vw; }
+div.auth_pop {z-index:5;}
+
+div.btn_type3 {width:100%; position:fixed; bottom:0px; left:0px; padding-top:9.17vw;}
+div.btn_type3 button {width:100%; height:13.89vw; border:none; color:#fff; font-size:6.67vw;}
+div.btn_type3 button.gray {background:#999999;}
+div.btn_type3 button.blue {background:#2D8CE2;}
+div.btn_type3 ul {overflow:hidden;}
+div.btn_type3 ul li {float:left;}
+div.btn_type3 ul li:last-child {width:70%;}
+div.btn_type3 ul li:first-child {width:30%;}
+
+/* 로딩바 */
+#divLoadingImage {position: fixed !important; width: 100% !important; height:100% !important; z-index: 99999 !important; top: 0px !important; background:#fff !important; opacity:0.6 !important; display: none; left:0px;}
+#divLoadingImage img {width: 120px; height: 120px; position: absolute; left: 50%; top: 50%; margin-top: -60px; margin-left: -60px;}
+#iframePageLoading {position: absolute !important; width: 100% !important; height:100% !important; top: 0px !important; background:#fff !important; opacity:0.6 !important; left:0px; display:none;}
+#iframePageLoading img {width: 120px; height: 120px; position: absolute; left: 50%; top: 50%; margin-top: -60px; margin-left: -60px;}
+#iframePopupLoading {position: absolute !important; width: 100% !important; height:100% !important; top: 0px !important; background:#fff !important; opacity:0.6 !important; left:0px; display:none;}
+#iframePopupLoading img {width: 120px; height: 120px; position: absolute; left: 50%; top: 50%; margin-top: -60px; margin-left: -60px;}
+
+div.page_wrap_01 {width:100%; height:100%; background-size:100% 100%; padding:18px 10px 0px; }
+div.page_title {text-align:center;}
+div.page_title img {display:inline-block; padding-bottom:10px; padding-top:10px; width:40px;}
+div.page_title h2 {font-size:7vw; font-weight:bold; padding-bottom:10px;}
+div.page_title table {width:100%;}
+div.page_title table th {font-size:3.6vw; color:#333; height:30px; text-align:center; font-weight:500; padding:25px 0; vertical-align:top; border-bottom:1px solid #e0e0e0;}
+div.page_title table td {padding:10px; height:30px; font-size:4.0vw; text-align:left; line-height:1.5; color:#000000; border-bottom:1px solid #e0e0e0; vertical-align:middle;}
+div.page_title table .last {border-bottom:0px;}
+div.middle p.help {font-size: 3.8vw !important;}
+div.page_btn_01 {position:fixed; bottom:20px; left:0px; width:100%; height:50px; background:#006cb8; clear:both;}
+div.page_btn_01 a {font-size:1.750vw; color:#fff; text-align:center; display:block; line-height:50px;}
+
+div.fast_area h2.bill_title {font-size: 6.00vw; font-weight: 900; color: #2D8CE2; line-height: 1.5; text-align: center; padding-top: 0px; padding-bottom: 10px; border-bottom:1px solid #d8d8d8 }
+div.fast_area div.bill {margin-top: 1.00vw; padding:5px 0; text-align: center;}
+div.fast_area div.bill h2 { text-align: left; margin-top: 2.00vw; font-size: 4.50vw;}
+div.fast_area div.bill table { position: relative; width: 100%; margin: 15px 0;  border: none; border-collapse: collapse;}
+div.fast_area div.bill table th { font-size: 3.3vw; height: 40px;}
+div.fast_area div.bill table td { font-size: 3.3vw; height: 40px; text-align: center;}
+div.fast_area div.bill table.red_tb th {border: 1px solid #ff7f7f;}
+div.fast_area div.bill table.red_tb td {border: 1px solid #ff7f7f; padding: 10px;}
+div.fast_area div.bill table.blue_tb th {border: 1px solid #006cb7;}
+div.fast_area div.bill table.blue_tb td {border: 1px solid #006cb7; padding: 10px;}
+div.fast_area div.bill table.gray_tb th {border: 1px solid #aeabae;}
+div.fast_area div.bill table.gray_tb td {border: 1px solid #aeabae; padding: 10px;}
+div.fast_area div.bill table td.txtr { text-align: right; } 
+div.fast_area div.bill table td.txtl { text-align: left; } 
+div.fast_area div.bill table td.txtc { text-align: center; } 
+
+div.fast_area div.billend {width:82.22vw; height:110.00vw; margin:0 auto 25vw; background:#fff; box-shadow: rgb(166 180 200 / 20%) 0px 4px 5px 5px; margin-top:10px; padding:2.38vw;}
+div.fast_area div.billend h1 {text-align: center; padding: 10.00vw 0;}
+div.fast_area div.billend dt {text-align: center; width:100%; font-size: 8.00vw; line-height: 11.00vw; font-weight: 900; color: #2D8CE2; }
+div.fast_area div.billend dd {text-align: center; width:100%; padding-top: 8.00vw; font-size: 3.80vw; line-height: 5.5vw;}
+
+div.fast_area div.middle_insure {margin-top:10.00vw;}
+div.fast_area div.middle_insure h1.img {line-height: 1.5; text-align: center; padding-top: 0px; padding-bottom: 20px;}
+div.fast_area div.middle_insure ul {margin-bottom:20px;}
+div.fast_area div.middle_insure ul li {padding-top:15px; line-height:1.5; font-size: 4.5vw;  font-weight: 500;}
+div.fast_area div.middle_insure ul li span { color: red; font-size: 4.0vw;}
+div.fast_area div.middle_insure ul li a {float: right; color: #333333; font-size: 4vw; }
+div.fast_area div.middle_insure ul li a :link, a:active {color: #333333; font-size: 4.5vw; }
+div.fast_area div.middle_insure ul li a :visited {color: #333333;}
+div.fast_area div.middle_insure ul li a :hover { color: #333333;}
+div.fast_area div.middle_insure p { padding: 10px 5px; font-size: 4.5vw; line-height:1.5; font-weight: 700;}
+div.fast_area div.middle_insure p.blue {color: #2D8CE2; font-weight: 700;}
+div.fast_area div.middle_insure p.help {font-size: 3.5vw;}
+div.fast_area div.middle_insure label {  padding: 0 5px; font-size: 4.5vw; line-height:1.5; font-weight: 500;}
+div.fast_area div.middle_insure .type_01 {width:100%; font-size: 4.5vw; height:10vw; border:1px solid #E2E2E3; padding:0 2.5vw; border-radius:5px;}
+div.fast_area div.middle_insure table { margin: 20px 0; width: 100%;}
+div.fast_area div.middle_insure table td {font-size: 4.5vw; line-height:1.5; padding: 1vw 0;}
+div.fast_area div.middle_insure table td:last-child { text-align: right; }

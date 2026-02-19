@@ -1,0 +1,284 @@
+@CHARSET "UTF-8";
+
+/* 그리드 메인 외곽 DIV */
+.aui-grid {
+	font-family: 'Malgun Gothic', '맑은 고딕', AppleSDGothicNeo-Light,
+		sans-serif !important;
+	font-size: 12px;
+	border: 1px solid #e4e5e7;
+	background: #ffffff;
+	box-sizing: content-box;
+	-webkit-appearance: none;
+	outline: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+/* 셀 기본 */
+.aui-grid  .aui-grid-table,.aui-grid .aui-grid-table tr,.aui-grid .aui-grid-table td
+	{
+	border-spacing: 0;
+	border-collapse: collapse;
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	line-height: 1.5em;
+}
+
+/* 편집 모드 기본 텍스트 인풋  */
+.aui-grid  .aui-textinputer {
+	font-size: 12px;
+	border: 2px solid #005766;
+	outline: none;
+	box-sizing: border-box;
+	margin:0px !important;
+}
+.aui-grid  .aui-textinputer::-ms-clear {
+	display: none;
+}
+
+/* 체크박스, 라디오  */
+.aui-checkbox, .aui-radio {
+	vertical-align:middle;
+	margin: 0;
+	padding: 0;
+}
+
+/* 이미지  */
+.aui-grid .aui-img {
+	box-sizing: content-box;
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing:  content-box;
+}
+
+/* 그리드 메세지 출력 레이어 */
+.aui-grid-info-layer {
+	background: #fff;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+/** 그리드 유효성 검사 툴팁 레이어 */
+.aui-grid-validator-message-layer {
+	padding: 2px 6px;
+	border: 1px solid #999;
+	background: #ff0000;
+	color:#fff;
+	background: -webkit-linear-gradient(top, #FF6C6C, #C90000);
+	background: -moz-linear-gradient(top, #FF6C6C, #C90000);
+	background: -ms-linear-gradient(top, #FF6C6C, #C90000);
+	background: -o-linear-gradient(top, #FF6C6C, #C90000);
+	background: linear-gradient(to bottom, #FF6C6C, #C90000);
+	border-radius: 4px;
+	z-index: 999;
+	box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+	-webkit-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 노데이터 메세지 레이어*/
+.aui-grid-nodata-msg-layer {
+	background: url(./images/noData.png) 0 50% no-repeat;
+	position: absolute;
+	color: #38424c;
+	padding: 20px 0 0 50px;
+	margin: 0 auto;
+	width: auto;
+	height: 40px;
+	box-sizing:content-box;
+	font-size:12px;
+
+}
+
+.aui-grid-text-right {
+	text-align: right !important;
+}
+
+.aui-grid-text-left {
+	text-align: left !important;
+}
+
+.aui-grid-temp {
+	position: relative;
+	width: 100%;
+	text-align: left;
+	overflow-x:hidden;
+}
+	.aui-grid-temp .aui-grid-temp-btn {
+		float: right;
+		display: inline-block;
+		width: 20px;
+		height: 20px;
+		background: url(./images/search2.png) 50% 50% no-repeat;
+	}
+
+
+.aui-grid-font-color-blue div {
+	color: blue !important;
+	font-weight: bold;
+}
+
+.aui-grid-font-color-red div {
+	color: red !important;
+	font-weight: bold;
+}
+
+
+.aui-grid-db-fail-row-style {
+	background-color: #ff5252 !important;
+}
+
+.aui-grid-validation-fail-row-style {
+	background-color: #fffdc0 !important;
+}
+
+.aui-grid-button-renderer {
+	background: #5674C8 !important;
+	color: #fff !important;
+	border-radius: 5px !important;
+	padding: 1px 4px !important;
+	font-weight: 400 !important;
+	font-size: 12px !important;
+	line-height: inherit;
+	border: 1px solid #526ebe;
+}
+
+/* 엑스트라 체크박스 체크된 행 스타일*/
+.aui-grid-extra-checked-row {
+	background: #bcdcfb !important;
+}
+
+	.aui-grid-extra-checked-row .aui-grid-closing-y-row-style {
+		background: #bcdcfb !important;
+	}
+
+	.aui-grid-extra-checked-row .aui-grid-carryover-y-row-style {
+		background: #bcdcfb !important;
+	}
+
+.aui-grid-gps-icon {
+	display: inline-block;
+	margin-top:2px;
+	width: 19px;
+	height: 22px;
+	background: url("/images/common/head_icon_02_on.png") no-repeat;
+	background-size: 19px 22px;
+	background-position: 50% 50%;
+}
+
+.aui-grid-editable_header {
+	background: -webkit-linear-gradient(top, #0074bc, #006aab) !important;
+	background: -moz-linear-gradient(top, #0074bc, #006aab) !important;
+	background: -ms-linear-gradient(top, #0074bc, #006aab) !important;
+	background: -o-linear-gradient(top, #0074bc, #006aab) !important;
+	background: linear-gradient(#0074bc, #006aab) !important;
+}
+
+.aui-grid-editable_header > div > span {
+    color: #ffffff;
+}
+
+.aui-grid-editable_header:hover > div > span {
+    /*color: #666666;*/
+	color: #ffffff;
+}
+
+.div_grid_gps_text {
+	display: inline-block;
+	text-align: left;
+	line-height: 2em;
+}
+
+.div_grid_gps_btn {
+	display: inline-block;
+	margin: -7px 0px -7px 4px;
+	padding: 2px 4px;
+	line-height: 2em;
+	cursor: pointer;
+	width: 19px;
+	height: 22px;
+	background: url(/images/common/head_icon_02_on.png) 50% 50% no-repeat;
+}
+
+
+.aui-grid-no-edit-row-style {
+    background-color: #cccccc !important;
+}
+
+.aui-grid-no-accept-row-style {
+}
+
+.aui-grid-no-accept-row-style div {
+    color: #ff0000;
+}
+
+.aui-grid-no-accept-row-style div span {
+    color: #ff0000;
+}
+
+
+.aui-grid-bonded-y-no-accept-row-style {
+	background: #93a7de;
+}
+
+.aui-grid-bonded-y-no-accept-row-style div {
+    color: #ff0000;
+}
+
+.aui-grid-bonded-y-no-accept-row-style div span {
+	color: #ff0000;
+}
+
+.aui-grid-bonded-y-row-style {
+	background: #93a7de;
+}
+
+.aui-grid-bonded-y-row-style div {
+    color: #ffffff;
+}
+
+.aui-grid-bonded-y-row-style div span {
+	color: #ffffff;
+}
+
+
+.aui-grid-closing-y-row-style {
+	background: #e9f9f2 !important;
+}
+
+	.aui-grid-closing-y-row-style div {
+		color: #333333;
+	}
+
+	.aui-grid-closing-y-row-style div span {
+		color: #333333;
+	}
+
+.aui-grid-carryover-y-row-style {
+	background: #f8f8eb !important;
+}
+
+.aui-grid-carryover-y-row-style div {
+		color: #333333;
+	}
+
+	.aui-grid-carryover-y-row-style div span {
+		color: #333333;
+	}
+
+
+.error-column-style {
+	background: #f8f8eb;
+}
+
+.error-column-style div {
+	color: #333333;
+}
+
+.error-column-style div span {
+	color: #333333;
+}

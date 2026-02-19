@@ -1,0 +1,56 @@
+using CommonLibrary.CommonModule;
+using CommonLibrary.CommonUtils;
+using System;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Collections.Generic;
+using System.Data;
+using PBSDasNetCom;
+using CommonLibrary.DasServices;
+using CommonLibrary.CommonModel;
+using CommonLibrary.Extensions;
+using CommonLibrary.Constants;
+
+namespace TMS.Dispatch
+{
+    public partial class OrderDispatchArrivalIns : PageBase
+    {
+        protected void Page_Init(object sender, EventArgs e)
+        {
+            _pageAccessType = PageAccessType.ReadWrite;
+        }
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            if (!IsPostBack)
+            {
+                GetInitData();
+            }
+        }
+
+        protected void GetInitData()
+        {
+            try
+            {
+                PageSize.Value = CommonConstant.GRID_PAGENAVIGATION_LIST;
+                PageNo.Value = "1";
+                CommonDDLB.CENTER_CODE_DDLB(objSes.AdminID, CenterCode);
+                CommonDDLB.ITEM_CHKLB(Page, OrderLocationCode, "OL", objSes.AccessCenterCode, objSes.AdminID);
+                CommonDDLB.DATE_CHOICE_DDLB(DateChoice);
+                /*CommonDDLB.ITEM_DDLB(this, ItemCode, "OP", objSes.AccessCenterCode, objSes.AdminID);
+                ItemCode.SelectedValue = "OP071";*/
+                DateType.Items.Clear();
+                DateType.Items.Add(new ListItem("상차일", "1"));
+                DateType.Items.Add(new ListItem("하차일", "2"));
+                DateType.Items.Add(new ListItem("접수일", "3"));
+                DateType.SelectedIndex = 0;
+            }
+            catch (Exception lo_ex)
+            {
+                SiteGlobal.WriteLog("OrderDispatchArrivalIns", "Exception",
+                    "\r\n\t[ex.Message] : " + lo_ex.Message + "\r\n\t[ex.StackTrace] : " + lo_ex.StackTrace,
+                    9501);
+            }
+        }
+    }
+}

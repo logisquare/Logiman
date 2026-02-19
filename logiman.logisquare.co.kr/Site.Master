@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" ClientIDMode="Static" Inherits="logiman.logisquare.co.kr.SiteMaster" %>
+<%@ Import Namespace="CommonLibrary.Constants" %>
+<%@ Import Namespace="CommonLibrary.CommonModule" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title><%=Server.HtmlEncode(CommonConstant.SITE_TITLE)%></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/LibJS") %>
+        <script type="text/javascript" src="/js/lib/jquery-ui/jquery-ui.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/js/common.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/js/utils.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <%: Scripts.Render("~/js/lib/sweetalert2/sweetalert2.js") %>
+    </asp:PlaceHolder>
+    
+    <!-- Default CSS -->
+    <link rel="icon" href="/images/icon/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/css/notosanskr.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" runat="server" ID="ThemeStyle"/>
+
+    <!-- AUIGrid CSS -->
+    <link rel="stylesheet" href="/js/lib/AUIGrid/AUIGrid_style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/js/lib/AUIGrid/AUIGrid_custom_style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <!-- AUIGrid JS -->
+    <script type="text/javascript" src="/js/lib/AUIGrid/AUIGridLicense.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script type="text/javascript" src="/js/lib/AUIGrid/AUIGrid.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script type="text/javascript" src="/js/lib/AUIGrid_Common.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    
+    <script>
+        $(document).ready(function () {
+            if (parent.document) {
+                if ($(".page_items", parent.document).length > 0) {
+                    if ($(".page_items", parent.document).html() == "") {
+                        var strUrl = $("#mainform").attr("action");
+                        var isSet = false;
+                        $.each($("#menu a", parent.document), function (index, item) {
+                            var href = $(item).attr("href");
+                            if (href.indexOf("'" + strUrl + "'") > -1) {
+                                eval("parent.fnSetMenuFromIframe" + href.substring(href.indexOf("("), href.indexOf(")") + 1) + ";");
+                                isSet = true;
+                                return false;
+                            }
+                        });
+
+                        if (!isSet) {
+                            if (strUrl == "/SSO/Admin/AdminMyInfo") {
+                                parent.fnSetMenuFromIframe("내정보 관리", "내정보 관리", "내정보 관리", "/SSO/Admin/AdminMyInfo", 0);
+                                return false;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+
+        function fnOpenRightSubLayer(title, url, popWidth, popHeight, layerWidth) {       // layerWidth : 값 미지정시, 디펄트는 50%
+            $("#iframePopupLoading").show();
+            $("#hid_LAYER_TITLE").val(title);
+            $("#hid_LAYER_WIDTH").val(popWidth);
+            $("#hid_LAYER_HEIGHT").val(popHeight);
+            if (layerWidth !== "") {
+                $("#cp_layer").css("width", layerWidth);
+            }
+
+            $("#lbl_LAYER_TITLE").html($("#hid_LAYER_TITLE").val());
+
+            if (url.split('?').length > 1) {
+                $("#hid_LAYER_URL").val(url + "&title=" + encodeURI(title));
+            }
+            else {
+                $("#hid_LAYER_URL").val(url + "?title=" + encodeURI(title));
+            }
+
+            var $form = null;
+            if ($("form[name=layerIframeForm]").length > 0) {
+                $form = $("form[name=layerIframeForm]");
+                $form.remove();
+                $form = null;
+            }
+            $("div.popup_loading").show();
+            $form = $("<form name='layerIframeForm'></form>");
+            $form.attr("action", $("#hid_LAYER_URL").val());
+            $form.attr("method", "post");
+            $form.attr("target", "ifrm_layer");
+
+            var formData = $("#mainform").serializeObject();
+            $form.addHidden(formData);
+
+            $form.appendTo("body");
+            $form.submit();
+            $form.remove();
+
+            fnOpenCpLayer();
+        }
+
+        $(function () {
+            $('#ifrm_layer').on("load", function () {
+                $("#iframePopupLoading").hide();
+            });
+        });
+
+    </script>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css?ver=20251015" />
+
+    <asp:ContentPlaceHolder id="headscript" runat="server"></asp:ContentPlaceHolder>
+
+    <% if(!string.IsNullOrWhiteSpace(SiteGlobal.GA_CODE_WEB)) {%>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%=SiteGlobal.GA_CODE_WEB%>"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '<%=SiteGlobal.GA_CODE_WEB%>');</script>
+    <%}%>
+</head>
+<body>
+    <form id="mainform" runat="server" method="post" action="">
+        <asp:HiddenField runat="server" ID="hid_LAYER_TITLE" Value="로지스퀘어 매니저" />
+        <asp:HiddenField runat="server" ID="hid_LAYER_WIDTH" Value="" />
+        <asp:HiddenField runat="server" ID="hid_LAYER_HEIGHT" Value="" />
+        <asp:HiddenField runat="server" ID="hid_LAYER_URL" Value="Default.html" />
+        <asp:ContentPlaceHolder id="MainContent" runat="server"></asp:ContentPlaceHolder>      
+        <!-- Loader //-->
+        <div id="divLoadingImage" style="display: none;"><img src="/images/common/loader.gif" alt="Loading..." /></div>
+        <!-- Loader //-->
+        <!--우측상세 레이어 시작-->
+	    <div id="cp_layer">
+		    <div class="cp_layer_top">
+			    <h1><asp:Label runat="server" ID="lbl_LAYER_TITLE" style="font-size:18px;font-weight:400"></asp:Label></h1>
+			    <ul class="cp_layer_controll">
+                    <li id="cp_layer_smallLayer" style="display:none"><a href="javascript:fnSmallLayer();" title="기본화면"></a></li>
+				    <li id="cp_layer_bigLayer"><a href="javascript:fnBigLayer();" title="최대화면"></a></li>
+				    <li><a href="javascript:fnCloseCpLayer();" title="닫기"></a></li>
+			    </ul>
+		    </div>
+		    <div class="cp_layer_body">
+			    <iframe src="" id="ifrm_layer" name="ifrm_layer" scrolling="no" frameborder="0"></iframe>
+                <div id="iframePopupLoading"><img src="/images/common/loader.gif" alt="Loading..." /></div>
+		    </div>
+	    </div>
+        <!--우측상세 레이어 끝-->
+    </form>
+</body>
+</html>

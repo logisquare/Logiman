@@ -1,0 +1,76 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Popup.Master.cs" ClientIDMode="Static" Inherits="logiman.logisquare.co.kr.PopupMaster" %>
+<%@ Import Namespace="CommonLibrary.Constants" %>
+<%@ Import Namespace="CommonLibrary.CommonModule" %>
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title><%=Server.HtmlEncode(CommonConstant.SITE_TITLE)%></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/LibJS") %>
+        <script type="text/javascript" src="/js/lib/jquery-ui/jquery-ui.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/js/common.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/js/utils.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <%: Scripts.Render("~/js/lib/sweetalert2/sweetalert2.all.min.js") %>
+        <!-- Daum 주소 api -->
+        <script type="text/javascript" src="https://ssl.daumcdn.net/dmaps/map_js_init/postcode.v2.js"></script>
+    </asp:PlaceHolder>
+    
+    <!-- Default CSS -->
+    <link rel="icon" href="/images/icon/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/css/notosanskr.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" runat="server" ID="ThemeStyle"/>
+    
+    <!-- AUIGrid CSS -->
+    <link rel="stylesheet" href="/js/lib/AUIGrid/AUIGrid_style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/js/lib/AUIGrid/AUIGrid_custom_style.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <!-- AUIGrid JS -->
+    <script type="text/javascript" src="/js/lib/AUIGrid/AUIGridLicense.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script type="text/javascript" src="/js/lib/AUIGrid/AUIGrid.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script type="text/javascript" src="/js/lib/AUIGrid_Common.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script>
+        $(document).ready(function () {
+            if ($.cookie('theme') === "dark") {
+                $(".theme_css").attr("href", "/css/theme-dark.css");
+            } else {
+                $(".theme_css").attr("href", "/css/theme-default.css");
+            }
+        });
+    </script>
+    <webopt:bundlereference runat="server" path="~/Content/css" />
+    <link rel="stylesheet" href="/css/jquery-ui.css?ver=20251015" />
+
+    <asp:ContentPlaceHolder id="headscript" runat="server"></asp:ContentPlaceHolder>
+
+    <% if(!string.IsNullOrWhiteSpace(SiteGlobal.GA_CODE_WEB)) {%>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%=SiteGlobal.GA_CODE_WEB%>"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '<%=SiteGlobal.GA_CODE_WEB%>');</script>
+    <%}%>
+</head>
+<body style="overflow-y:auto;" class="theme-css popup">
+    <form id="mainform" runat="server" method="post">
+        <asp:HiddenField runat="server" ID="p_popup" />
+        <div style="margin:10px 10px 10px 10px" class="exception">
+            <div runat="server" id="divPOPUP_TITLE_LAYER">
+                <asp:Label runat="server" ID="lblPOPUP_TITLE" style="font-size:18px;font-weight:400"></asp:Label>
+            </div>
+
+            <asp:ContentPlaceHolder id="MainContent" runat="server"></asp:ContentPlaceHolder>        
+        
+        </div>
+
+        <!-- Loader //-->
+        <div id="divLoadingImage" class="popup_loading" style="display: none;"><img src="/images/common/loader.gif" alt="Loading..." /></div>
+        <!-- Loader //-->
+
+        <asp:ContentPlaceHolder id="SubContent" runat="server"></asp:ContentPlaceHolder>     
+    </form>
+</body>
+</html>

@@ -1,0 +1,167 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AppPopup.Master.cs" ClientIDMode="Static" Inherits="logiman.logisquare.co.kr.AppPopupMaster" %>
+<%@ Import Namespace="CommonLibrary.Constants" %>
+<%@ Import Namespace="CommonLibrary.CommonModule" %>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head runat="server">
+    <title><%=CommonConstant.APP_SITE_TITLE %></title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <link rel="icon" href="/APP/images/favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/APP/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/APP/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/APP/css/common.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" type="text/css" href="/APP/css/logislab.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <script type="text/javascript" src="/APP/js/jquery-1.11.2.min.js" ></script>
+    <script type="text/javascript" src="/APP/js/jquery-ui.min.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <script type="text/javascript" src="/APP/js/jquery.blockUI.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+    <%: Scripts.Render("~/js/lib/sweetalert2/sweetalert2.js") %>
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+    <script type="text/javascript" src="/APP/js/utils.js" ></script>
+    <script type="text/javascript" src="/APP/js/common.js" ></script>
+
+    <asp:ContentPlaceHolder id="headscript" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <script type="text/javascript">
+        $(function () {
+            $("dt.depth").on("click", function () {
+                $("div#MenuList dl dd ul").not($(this).next("dd").children()).slideUp();
+                $(this).next("dd").children().slideToggle(300);
+            });
+        });
+
+        $(document).ready(function () {
+            SetInitVar();
+        });
+
+        function fnMenuShow() {
+            $("div#MenuWrap").toggle();
+        }
+
+        function SetInitVar() {
+            // 숫자만 입력
+            $(".txt_number").keyup(function () {
+                this.value = this.value.replace(/[^0-9]/g, "");
+            });
+
+            //영숫자 입력
+            $(".txt_numeric").keyup(function () {
+                this.value = this.value.replace(/[^a-zA-Z0-9]/g, "");
+            });
+            //숫자, 소수점
+            $(".txt_float").keyup(function () {
+                this.value = this.value.replace(/[^0-9\.]/g, "");
+            });
+
+            $(".readonly").focus(function () {
+                $(".readonly").blur();
+            });
+        }
+
+        function __doPostBackAsync(eventName, eventArgs) {
+            var prm = Sys.WebForms.PageRequestManager.getInstance();
+
+            if (!Array.contains(prm._asyncPostBackControlIDs, eventName)) {
+                prm._asyncPostBackControlIDs.push(eventName);
+            }
+
+            if (!Array.contains(prm._asyncPostBackControlClientIDs, eventName)) {
+                prm._asyncPostBackControlClientIDs.push(eventName);
+            }
+
+            __doPostBack(eventName, eventArgs);
+        }
+
+        function CallPostBack(eventtarget, eventparam) {
+            __doPostBack(eventtarget, eventparam);
+        }
+
+        function CallPostBackAsync(eventtarget, eventparam) {
+            __doPostBackAsync(eventtarget, eventparam);
+        }
+
+        function pageReload() {
+            __doPostBack("", "");
+        }
+
+        function goBack() {
+            location.href = $("#pMenu").val() + "?" + $("#pParam").val();
+        }
+
+        function viewFile(title, url, name, pMenu, pParam) {
+            if (url == null || url === "" || name == null || name === "") {
+                return;
+            }
+
+            var Url = "/APP/Common/Util/OrderViewFile.aspx";
+            Url += "?title=" + encodeURI(title);
+            Url += "&url=" + encodeURI(url);
+            Url += "&name=" + encodeURI(name);
+            Url += "&pMenu=" + encodeURI(pMenu);
+            Url += "&pParam=" + encodeURIComponent(pParam);
+            location.href = Url;
+        }
+
+    </script>
+
+    <% if(!string.IsNullOrWhiteSpace(SiteGlobal.GA_CODE_APP)) {%>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%=SiteGlobal.GA_CODE_APP%>"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '<%=SiteGlobal.GA_CODE_APP%>');</script>
+    <%}%>
+</head>
+<body>
+<form id="MainForm" runat="server" method="post" name="MainForm">
+    <asp:HiddenField runat="server" ID="hid_MOBILE_DEVICE" Value="" />
+    <asp:HiddenField runat="server" ID="pMenu" Value="" />
+    <asp:HiddenField runat="server" ID="pParam" Value="" />
+    <!-- header // - start -->
+    <header id="MenuArea">
+        <button type="button" class="menu_btn" onclick="fnMenuShow();"><img src="/APP/images/menu_icon.png"/></button>
+        <div class="header">
+            <h1><asp:Label runat="server" ID="PopMastertitle"></asp:Label></h1>
+            <button type="button" id="BtnGoBack" onclick="fnListBack();" class="back_icon"><img src="/APP/images/back_icon.png"/></button>
+        </div>
+    </header>
+    <!-- header // - end -->
+    <!-- 메뉴 시작-->
+    <div id="MenuWrap">
+        <div id="MenuList">
+            <h1>MENU<button type="button" onclick="fnMenuShow();"><img src="/APP/images/menu_close.png"/></button></h1>
+            <dl>
+                <dt onclick="location.href='<%=CommonConstant.APP_PAGE_1%>'">HOME</dt>
+                <dt class="depth">오더관리</dt>
+                <dd>
+                    <ul>
+                        <li onclick="location.href='/APP/TMS/Domestic/DomesticList'">- 내수오더현황</li>
+                        <li onclick="location.href='/APP/TMS/Inout/InoutList'">- 수출입오더현황</li>
+                    </ul>
+                </dd>
+                <dt class="depth">정보관리</dt>
+                <dd>
+                    <ul>
+                        <li onclick="location.href='/APP/TMS/Client/ConsignorList'">- 화주관리</li>
+                        <li onclick="location.href='/APP/TMS/Client/ClientList'">- 고객사관리</li>
+                        <li onclick="location.href='/APP/TMS/Client/PlaceList'">- 상하차지관리</li>
+                        <li onclick="location.href='/APP/TMS/Car/CarDispatchRefList'">- 차량관리</li>
+                    </ul>
+                </dd>
+                <dt onclick="location.href='/APP/Login/Logout'">로그아웃</dt>
+            </dl>
+        </div>
+    </div>
+    <!-- 메뉴 끝-->
+    <!-- container // - start -->
+    <div id="Container">
+        <asp:ContentPlaceHolder id="MainFormPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+    </div>
+    <!-- container // - end -->
+    <!-- Loader //-->
+    <div id="divLoadingImage"><img src="/APP/Images/loader.gif" alt="Loading..." /></div>
+    <!-- Loader //-->
+</form>
+</body>
+</html>

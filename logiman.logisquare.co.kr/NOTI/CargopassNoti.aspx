@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CargopassNoti.aspx.cs" Inherits="NOTI.Cargopass.CargopassNoti" %>

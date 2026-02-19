@@ -1,0 +1,74 @@
+[
+  {
+    "CenterCode": 1,
+    "CenterName": "주식회사 로지스랩",
+    "ChiefName": "랩책임자",
+    "ChiefPosition": "랩책임직책",
+    "ChiefEmail": "랩책임이메일",
+    "ManagerName": "랩담당자",
+    "ManagerDepartment": "랩담당부서",
+    "ManagerTelNo": "랩담당전화번호",
+    "ManagerEmail": "랩담당이메일",
+    "FromYMD": "2023.07.01."
+  },
+  {
+    "CenterCode": 2,
+    "CenterName": "주식회사 로지스퀘어",
+    "ChiefName": "천선아",
+    "ChiefPosition": "실장",
+    "ChiefEmail": "csa1002@logisquare.co.kr",
+    "ManagerName": "천선아",
+    "ManagerDepartment": "경영지원실",
+    "ManagerTelNo": "042-334-0845",
+    "ManagerEmail": "csa1002@logisquare.co.kr",
+    "FromYMD": "2023.08.01."
+  },
+  {
+    "CenterCode": 90,
+    "CenterName": "주식회사 로풀",
+    "ChiefName": "천선아",
+    "ChiefPosition": "실장",
+    "ChiefEmail": "csa1002@logisquare.co.kr",
+    "ManagerName": "천선아",
+    "ManagerDepartment": "경영지원실",
+    "ManagerTelNo": "042-334-0845",
+    "ManagerEmail": "csa1002@logisquare.co.kr",
+    "FromYMD": "2023.08.01."
+  },
+  {
+    "CenterCode": 98,
+    "CenterName": "주식회사 제이에스로지스틱스",
+    "ChiefName": "천선아",
+    "ChiefPosition": "실장",
+    "ChiefEmail": "csa1002@logisquare.co.kr",
+    "ManagerName": "천선아",
+    "ManagerDepartment": "경영지원실",
+    "ManagerTelNo": "042-334-0845",
+    "ManagerEmail": "csa1002@logisquare.co.kr",
+    "FromYMD": "2023.08.01."
+  },
+  {
+    "CenterCode": 132,
+    "CenterName": "주식회사 대승통운",
+    "ChiefName": "천선아",
+    "ChiefPosition": "실장",
+    "ChiefEmail": "csa1002@logisquare.co.kr",
+    "ManagerName": "천선아",
+    "ManagerDepartment": "경영지원실",
+    "ManagerTelNo": "042-334-0845",
+    "ManagerEmail": "csa1002@logisquare.co.kr",
+    "FromYMD": "2023.08.01."
+  },
+  {
+    "CenterCode": 140,
+    "CenterName": "주식회사 월드로지스",
+    "ChiefName": "천선아",
+    "ChiefPosition": "실장",
+    "ChiefEmail": "csa1002@logisquare.co.kr",
+    "ManagerName": "천선아",
+    "ManagerDepartment": "경영지원실",
+    "ManagerTelNo": "042-334-0845",
+    "ManagerEmail": "csa1002@logisquare.co.kr",
+    "FromYMD": "2023.08.01."
+  }
+]

@@ -1,0 +1,51 @@
+/*
+* Noto Sans KR (korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 100;
+  src: url(notosans/NotoSansKR-Thin.woff2) format('woff2'),
+       url(notosans/NotoSansKR-Thin.woff) format('woff'),
+       url(notosans/NotoSansKR-Thin.otf) format('opentype');
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  font-style: normal;
+  font-weight: 300;
+  src: url(notosans/NotoSansKR-Light.woff2) format('woff2'),
+       url(notosans/NotoSansKR-Light.woff) format('woff'),
+       url(notosans/NotoSansKR-Light.otf) format('opentype');
+}
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 400;
+   src: url(notosans/NotoSansKR-Regular.woff2) format('woff2'),
+        url(notosans/NotoSansKR-Regular.woff) format('woff'),
+        url(notosans/NotoSansKR-Regular.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 500;
+   src: url(notosans/NotoSansKR-Medium.woff2) format('woff2'),
+        url(notosans/NotoSansKR-Medium.woff) format('woff'),
+        url(notosans/NotoSansKR-Medium.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 700;
+   src: url(notosans/NotoSansKR-Bold.woff2) format('woff2'),
+        url(notosans/NotoSansKR-Bold.woff) format('woff'),
+        url(notosans/NotoSansKR-Bold.otf) format('opentype');
+ }
+@font-face {
+   font-family: 'Noto Sans KR';
+   font-style: normal;
+   font-weight: 900;
+   src: url(notosans/NotoSansKR-Black.woff2) format('woff2'),
+        url(notosans/NotoSansKR-Black.woff) format('woff'),
+        url(notosans/NotoSansKR-Black.otf) format('opentype');
+ }

@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, user-scalable=">
+    <meta name="Keywords" lang="ko" content="로지스퀘어 매니저">
+    <meta name="keywords" lang="ko" content="로지스퀘어 매니저" />
+    <meta name="keywords" lang="en" content="logisquaremanager" />
+    <meta name="keywords" lang="en" content="logisquaremanager" />
+    <meta property="og:title" content="로지스퀘어 매니저" />
+    <meta property="og:type" content="website" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="로지스퀘어 매니저" />
+    <meta property="og:description" content="로지스퀘어 매니저" />
+    <meta name="description" content="로지스퀘어 매니저" />
+    
+    <title>:::: 로지스퀘어 매니저 ::::</title>
+    <script src="/js/lib/jquery/jquery.js"></script>
+<script src="/js/lib/datatables/jquery.dataTables.js"></script>
+<script src="/js/lib/bootstrap/bootstrap.js"></script>
+<script src="/js/lib/jquery.blockUI.js"></script>
+<script src="/js/lib/jquery.datetimepicker.full.js"></script>
+<script src="/js/lib/jquery.fileDownload.js"></script>
+<script src="/js/lib/jquery.cookie.js"></script>
+<script src="/js/lib/AUIGrid/pdfkit/AUIGrid.pdfkit.js"></script>
+<script src="/js/lib/AUIGrid/pdfkit/FileSaver.min.js"></script>
+
+    <script type="text/javascript" src="/js/lib/jquery-ui/jquery-ui.js?ver=20221109132449"></script>
+    <script type="text/javascript" src="/js/common.js?ver=20221109132449"></script>
+    <script type="text/javascript" src="/js/utils.js?ver=20221109132449"></script>
+    <script src="/js/lib/sweetalert2/sweetalert2.js"></script>
+
+    <link rel="icon" href="/images/icon/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="/css/style.css?ver=20221109132449" />
+    <link rel="stylesheet" href="/css/notosanskr.css?ver=20221109132449" />
+    <link id="ThemeStyle" rel="stylesheet" href="/css/theme-default.css?ver=20221109132449"></link>
+    
+    <script>
+        $(document).ready(function () {
+        });
+
+        function goHome() {
+            location.href = "/";
+        }
+
+    </script>
+    <style>
+        div#ServiceStop {width:800px; margin:0 auto; padding-top:100px; text-align:center;}
+        div#ServiceStop h1 {font-size:52px; text-align:center; font-weight:bold; color:#6782CE; padding:30px 0;}
+        div#ServiceStop p {text-align:center; font-size:32px; word-break:keep-all; line-height:1.5;}
+        div.btn_area {text-align:center; margin-top:50px;}
+        div.btn_area button {background:#6782CE; color:#fff; font-size:30px; height:60px; width:300px; border-radius:10px; font-weight:500;}
+    </style>
+
+</head>
+<body>
+<form method="post" action="./ServiceStop" id="form1">
+<div class="membership_header">
+    <span>고객센터 042-935-3100</span>
+</div>
+
+<div class="membership_area">
+    <div id="ServiceStop">
+        <img src="/images/error_img.png"/>
+        <h1>서비스 시작중</h1>
+        <p>
+            서비스가 곧 시작됩니다.<br />
+            잠시후 새로고침을 해주시기 바랍니다.
+        </p>
+    </div>
+    <div class="btn_area">
+        <button type="button" onclick="javascript:goHome();">새로고침</button>
+    </div>
+</div>
+
+<div class="login_bottom">
+    <ul>
+        <li>
+            <h2></h2>
+            <p>
+                고객센터  042-935-3100  (운영시간  평일 오전 10시 - 오후 6시) <br />
+                COPYRIGHT ⓒ LOGISQUARE ALL RIGHT RESERVED.
+            </p>
+        </li>
+        <li>
+            <a href="#">이용약관</a><span>|</span>
+            <a href="#">개인정보처리방침</a><span>|</span>
+            <a href="#">문의안내</a><span>|</span>
+            <a href="#">오시는길</a>
+        </li>
+    </ul>
+</div>
+</form>
+</body>
+</html>

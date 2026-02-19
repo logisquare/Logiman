@@ -1,0 +1,8 @@
+.essential {background:url("../images/essential_icon.png") no-repeat right top;}
+select.read {background-color:#e7e7e7 !important;}
+.type_01 {width:100%; height:9vw; border:1px solid #E2E2E3; padding:0 2.5vw; border-radius:5px;}
+div.reg_btn_02 {width:100%; margin-top:10px;}
+div.reg_btn_02 button {width:100%; background:#fff; color:#ff0000; font-size:4.44vw; height:50px; border:1px solid #ff0000;}
+.find.essential {background-image:url("../images/search_icon.png"),url("../images/essential_icon.png"); background-repeat:no-repeat, no-repeat; background-position: 93% center, right top;  padding-right:30px; background-color:#fff !important;}
+ul.checkbox_list li input[type="radio"] {display:none;}
+ul.checkbox_list li input[type="radio"]:checked + label {border:1px solid #121212; background:url("../images/checkbox_on.png") no-repeat 95% center #F7F7F7; background-size:4.44vw;}

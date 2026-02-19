@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CmMobileInboundCall.aspx.cs" Inherits="WebSocket.CmMobileInboundCall" %>

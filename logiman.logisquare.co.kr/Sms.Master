@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Sms.Master.cs" ClientIDMode="Static" Inherits="logiman.logisquare.co.kr.SmsMaster" %>
+<%@ Import Namespace="CommonLibrary.Constants" %>
+<%@ Import Namespace="CommonLibrary.CommonModule" %>
+<!DOCTYPE html>
+
+<html lang="en">
+<head runat="server">
+    <title></title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex, nofollow" />
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/SMS/js/lib/jquery/jquery.js") %>
+        <%: Scripts.Render("~/SMS/js/lib/jquery.blockUI.js") %>
+        <%: Scripts.Render("~/SMS/js/lib/jquery.datetimepicker.full.js") %>
+        <%: Scripts.Render("~/SMS/js/lib/jquery.fileDownload.js") %>
+        <%: Scripts.Render("~/SMS/js/lib/jquery.cookie.js") %>
+        <script type="text/javascript" src="/SMS/js/lib/jquery-ui/jquery-ui.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/SMS/js/common.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <script type="text/javascript" src="/SMS/js/utils.js?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>"></script>
+        <%: Scripts.Render("~/SMS/js/lib/sweetalert2/sweetalert2.all.min.js") %>
+        <%: Scripts.Render("~/SMS/js/lib/jquery.rwdImageMaps.min.js") %>
+    </asp:PlaceHolder>
+    
+    <!-- Default CSS -->
+    <link rel="icon" href="/SMS/images/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/SMS/css/stylesms.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/SMS/css/sweetalert2.css?ver=<%=DateTime.Now.ToString("yyyyMMddHHmmss")%>" />
+    <link rel="stylesheet" href="/SMS/css/notosanskr.css" />
+    <link href="/SMS/images/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    
+    <script type="text/javascript">
+        history.pushState(null, null, location.href);
+        window.onpopstate = function () {
+            history.go(1);
+        };
+
+        $("#document").ready(function () {
+            if ($("#DisplayMode").val() === "N") {
+                if (!$("#ErrMsg").val()) {
+                    fnDefaultAlert($("#ErrMsg").val(), "info", "fnPopupClose()");
+                    return false;
+                } else {
+                    fnPopupClose();
+                    return false;
+                }
+            }
+        });
+
+        function fnPopupClose() {
+            var _ua = window.navigator.userAgent || window.navigator.vendor || window.opera;
+            if (_ua.toLocaleLowerCase().indexOf("kakaotalk") > -1) {
+                window.location.href = (/iPad|iPhone|iPod/.test(_ua))
+                    ? "kakaoweb://closeBrowser"
+                    : "kakaotalk://inappbrowser/close";
+            } else {
+                window.open('', '_self', '');
+                window.close();
+            }
+
+        }
+
+        function fnAlert(strMsg) {
+            fnDefaultAlert(strMsg, "info");
+        }
+
+        function fnGoError(strMsg) {
+            document.location.replace("/SMS/Common/Error?Msg=" + encodeURI(strMsg));
+        }
+
+        function fnGoErrorUrl(strUrl, strTitle, strMsg) {
+            document.location.replace(strUrl + "?Title=" + encodeURI(strTitle) + "&Msg=" + encodeURI(strMsg));
+        }
+    </script>
+    
+
+    <asp:ContentPlaceHolder id="headscript" runat="server"></asp:ContentPlaceHolder>
+
+    <% if(!string.IsNullOrWhiteSpace(SiteGlobal.GA_CODE_SMS)) {%>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=<%=SiteGlobal.GA_CODE_SMS%>"></script>
+        <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', '<%=SiteGlobal.GA_CODE_SMS%>');</script>
+    <%}%>
+</head>
+<body style="overflow-y:auto;" class="theme-css">
+    <form id="mainform" runat="server" method="post">
+        <asp:ContentPlaceHolder id="MainContent" runat="server"></asp:ContentPlaceHolder>
+    </form>
+    <!-- Loader //-->
+    <div id="divLoadingImage" style="display: none;"><img src="/SMS/images/loader.gif" alt="Loading..." /></div>
+    <!-- Loader //-->
+</body>
+</html>
