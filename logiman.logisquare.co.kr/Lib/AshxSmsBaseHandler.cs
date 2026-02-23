@@ -1,4 +1,4 @@
-﻿using CommonLibrary.CommonModel;
+using CommonLibrary.CommonModel;
 using CommonLibrary.CommonUtils;
 using CommonLibrary.Constants;
 using Newtonsoft.Json;

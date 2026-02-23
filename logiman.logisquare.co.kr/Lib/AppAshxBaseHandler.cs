@@ -1,4 +1,4 @@
-﻿using CommonLibrary.CommonModel;
+using CommonLibrary.CommonModel;
 using CommonLibrary.Constants;
 using CommonLibrary.Extensions;
 using CommonLibrary.Session;

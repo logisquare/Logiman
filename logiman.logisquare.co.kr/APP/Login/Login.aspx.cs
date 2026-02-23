@@ -1,4 +1,4 @@
-﻿using CommonLibrary.CommonModule;
+using CommonLibrary.CommonModule;
 using CommonLibrary.Constants;
 using System;
 using System.Web.UI;
